@@ -8,7 +8,7 @@ import AuthProvider from "./src/context/mainContext";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
-import Participantes from "./src/pages/participantes";
+import Participantes from "./src/pages/Participantes";
 
 
 const Stack = createStackNavigator();
