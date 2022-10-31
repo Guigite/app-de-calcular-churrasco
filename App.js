@@ -9,6 +9,9 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
 import Participantes from "./src/pages/Participantes";
+import Home from "./src/pages/Home";
+import Pessoas from "./src/pages/Pessoas";
+import Lista from "./src/pages/Lista";
 
 
 const Stack = createStackNavigator();
@@ -28,14 +31,21 @@ export default function App(props){
                         backgroundColor: '#FF4F4F', 
                         },
                     }} />
-                    <Stack.Screen name="pessoas" component={Pessoas} 
+                    <Stack.Screen name="participantes" component={Participantes} 
                     options={{title: 'Voltar', 
                     headerTintColor: 'white', 
                     headerStyle: {
                         backgroundColor: 'black', 
                         },
                     }} />
-                    <Stack.Screen name="Participantes" options={{headerTitleAlign:'center'}} component={Participantes}/>
+                    <Stack.Screen name="lista" component={Lista} 
+                    options={{title: 'Voltar', 
+                    headerTintColor: 'white', 
+                    headerStyle: {
+                        backgroundColor: 'black', 
+                        },
+                    }} />
+                    
                 </Stack.Navigator>
             </AuthProvider>
         </NavigationContainer>

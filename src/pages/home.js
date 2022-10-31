@@ -5,7 +5,7 @@ import { TouchableOpacity } from "react-native";
 export default function Home(props){
     return(
         <View>
-            <TouchableOpacity style={styles.container} title="Avançar" onPress={() => props.navigation.navigate('pessoas')}>
+            <TouchableOpacity style={styles.container} title="Avançar" onPress={() => props.navigation.navigate('participantes')}>
                 <Text style={styles.texto}>Avançar</Text>
             </TouchableOpacity>
         </View>
