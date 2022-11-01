@@ -29,7 +29,7 @@ export default function AuthProvider({children}){
     }
 
     const ValorSemCrianca = () => {
-        data.pessoas.total = data.pessoas.homens + data.pessoas.mulher;
+        data.pessoas.totalsemcrianca = data.pessoas.homens + data.pessoas.mulher;
     }
 
     const response = 

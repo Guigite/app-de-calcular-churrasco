@@ -8,10 +8,10 @@ import AuthProvider from "./src/context/mainContext";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
-import Participantes from "./src/pages/Participantes";
+import Participantes from "./src/pages/participantes";
 import Home from "./src/pages/Home";
 import Pessoas from "./src/pages/Pessoas";
-import Lista from "./src/pages/Lista";
+import Lista from "./src/pages/lista";
 
 
 const Stack = createStackNavigator();

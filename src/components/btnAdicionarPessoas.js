@@ -18,9 +18,9 @@ export default function BotaoMudanca(props){
                 }else{
                     setValor(valor - 0)}
                 }}
-                >{props.decrementa}</TouchableOpacity> 
+                ><Text>{props.decrementa}</Text></TouchableOpacity> 
                 <Text>{valor}</Text>
-            <TouchableOpacity onPress={() => setValor(valor + 1)}>{props.incrementa}</TouchableOpacity>
+            <TouchableOpacity onPress={() => setValor(valor + 1)}><Text>{props.incrementa}</Text></TouchableOpacity>
         </View>
 );
 }
