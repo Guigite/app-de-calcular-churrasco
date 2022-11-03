@@ -26,9 +26,10 @@ export default function App(props){
                 <Stack.Screen name="home" component={Home} 
                     options={{title:'Churrascada', 
                     headerTitleAlign: 'center', 
-                    headerStyle: { 
-                        height: '35px',
-                        backgroundColor: '#FF4F4F', 
+                    headerTintColor: '#eecc60',
+                    headerStyle: {
+                        height: '50px',
+                        backgroundColor: '#62462B', 
                         },
                     }} />
                     <Stack.Screen name="participantes" component={Participantes} 
