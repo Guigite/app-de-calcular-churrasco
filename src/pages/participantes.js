@@ -9,12 +9,12 @@ import { MainContext } from "../context/mainContext";
     
     return(
         <View>
-            <Text>Homens</Text>
-            <BotaoMudanca pessoa="homem" incrementa= "+" decrementa= "-"/>
-            <Text>Mulheres</Text>
-            <BotaoMudanca pessoa="mulher" incrementa= "+" decrementa= "-"/>
-            <Text>Crianças</Text>
-            <BotaoMudanca pessoa="crianca" incrementa= "+" decrementa= "-"/>
+            <Text style={styles.text}>Homens</Text>
+            <BotaoMudanca pessoa="homem"/>
+            <Text style={styles.text}>Mulheres</Text>
+            <BotaoMudanca pessoa="mulher"/>
+            <Text style={styles.text}>Crianças</Text>
+            <BotaoMudanca pessoa="crianca"/>
 
             {ninguem ? <Text>Adicione pelo menos uma pessoa</Text> : null}
 
@@ -30,10 +30,35 @@ import { MainContext } from "../context/mainContext";
                     }
                 }}
             >
-                <Text >Avançar</Text>
+                <Text style={styles.textAvancar}>Avançar</Text>
             </TouchableOpacity>
             </View>        
         </View>
 
     );
 }
+
+const styles = StyleSheet.create({
+    text:{
+        marginTop: '20px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        color: '#000',
+        fontWeight: 'bold',
+        fontSize: '25px',
+    },
+    textAvancar:{
+        backgroundColor: '#62462B',
+        borderRadius: '20px',
+        padding: '5px',
+        // height: '10px',
+        marginTop: '30px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        color: '#eecc60',
+        fontWeight: 'bold',
+        fontSize: '25px',
+    }
+})

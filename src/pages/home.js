@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
         // paddingBottom: '100%',
     },
     botao:{
-        border: '3px solid #000',
+        border: '2px solid #000',
         borderRadius: '20px',
         display: 'flex',
         alignCenter: 'center',

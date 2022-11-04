@@ -1,5 +1,5 @@
 import React, {useContext, useState} from "react";
-import { View, Button, Text, TouchableOpacity } from "react-native";
+import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
 import { MainContext } from "../context/mainContext";
 
 export default function BotaoMudanca(props){
@@ -11,17 +11,34 @@ export default function BotaoMudanca(props){
     ValorSemCrianca();
 
     return (
-        <View>
+        <View style={styles.btns}>
             <TouchableOpacity onPress={() => {
                 if(valor > 0){
                     setValor(valor - 1) 
                 }else{
                     setValor(valor - 0)}
                 }}
-                ><Text>{props.decrementa}</Text></TouchableOpacity> 
-                <Text>{valor}</Text>
-            <TouchableOpacity onPress={() => setValor(valor + 1)}><Text>{props.incrementa}</Text></TouchableOpacity>
+                ><Text style={styles.textos}>-</Text>
+            </TouchableOpacity> 
+            <Text style={styles.textos}>{valor}</Text>
+            <TouchableOpacity onPress={() => {
+              setValor(valor + 1)  
+            }}>
+                <Text style={styles.textos}>+</Text>
+            </TouchableOpacity>
         </View>
 );
 }
 
+const styles = StyleSheet.create({
+    btns:{
+        margin: '5px',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'row',
+    },
+    textos:{
+        fontSize: '25px',
+        margin: '5px',
+    }
+})

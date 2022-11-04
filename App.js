@@ -21,10 +21,10 @@ export default function App(props){
             <AuthProvider>
 
                 <Stack.Navigator>
-                    <Stack.Screen name="home" component={Home} 
+                    {/* <Stack.Screen name="home" component={Home} 
                     options={{title:'Churrascada', 
                     headerShown: false, 
-                    }} />
+                    }} /> */}
                     <Stack.Screen name="participantes" component={Participantes} 
                     options={{title: 'Voltar', 
                     headerTintColor: 'white', 
