@@ -1,26 +1,38 @@
 import React, { useContext } from "react";
-import { StyleSheet , Text, View } from "react-native-web";
-import { TouchableOpacity } from "react-native";
-import Churrascada from '../imgs/Churrascada.jpg';
+import { StyleSheet , Text, View, TouchableOpacity, ImageBackground } from "react-native";
 
 export default function Home(props){
     return(
-        <View style={styles.container}>
-            <TouchableOpacity style={styles.botao} title="Avançar" onPress={() => props.navigation.navigate('participantes')}>
-                <Text style={styles.texto}>Avançar</Text>
-            </TouchableOpacity>
+        <View>
+            <ImageBackground resizeMode="cover" style={styles.image}source={require("../imgs/churrascada.jpg")}>
+                <View style={styles.container}>
+                    <TouchableOpacity style={styles.botao} title="Avançar" onPress={() => props.navigation.navigate('participantes')}>
+                        <Text style={styles.texto}>Avançar</Text>
+                    </TouchableOpacity>
+                </View>
+            </ImageBackground>
         </View>
     );
 }
 
 const styles = StyleSheet.create({
 
+    image:{
+        width: '100vw',
+        height: '100vh',
+    },
+
     container:{
-        // padding: '150px 75px 1000px 75px',
-        paddingTop: '150px',
-        paddingLeft: '75px',
-        paddingRight: '75px',
-        background: 'url(../imgs/Churrascada.jgp)',
+        width: '100%',
+        height: '100vh',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        // // padding: '150px 75px 1000px 75px',
+        // paddingTop: '150px',
+        // paddingLeft: '75px',
+        // paddingRight: '75px',
+        // paddingBottom: '100%',
     },
     botao:{
         border: '3px solid #000',

@@ -1,7 +1,5 @@
-
 import React from "react";
 import { Text, View, Pressable, StyleSheet } from "react-native-web";
-
 
 import AuthProvider from "./src/context/mainContext";
 
@@ -23,14 +21,9 @@ export default function App(props){
             <AuthProvider>
 
                 <Stack.Navigator>
-                <Stack.Screen name="home" component={Home} 
+                    <Stack.Screen name="home" component={Home} 
                     options={{title:'Churrascada', 
-                    headerTitleAlign: 'center', 
-                    headerTintColor: '#eecc60',
-                    headerStyle: {
-                        height: '50px',
-                        backgroundColor: '#62462B', 
-                        },
+                    headerShown: false, 
                     }} />
                     <Stack.Screen name="participantes" component={Participantes} 
                     options={{title: 'Voltar', 
