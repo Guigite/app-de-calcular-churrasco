@@ -10,7 +10,10 @@ export default function AuthProvider({children}){
             totalsemcrianca:0,
             homens: 0,
             mulher: 0,
-            crianca: 0
+            crianca: 0,
+            totalkilos: 0,
+            totallitrosa: 0,
+            totallitrosc: 0
         }
     }
 
@@ -32,12 +35,27 @@ export default function AuthProvider({children}){
         data.pessoas.totalsemcrianca = data.pessoas.homens + data.pessoas.mulher;
     }
 
+    const TotalCarnes = () => {
+        data.pessoas.totalkilos = (data.pessoas.homens*0.6) + (data.pessoas.mulher*0.4) + (data.pessoas.crianca*0.25);
+    }
+
+    const TotalLitrosAdultos = () => {
+        data.pessoas.totallitrosa = (data.pessoas.homens*2) + (data.pessoas.mulher*1.5);
+    }
+
+    const TotalLitrosCrianca = () => {
+        data.pessoas.totallitrosc = data.pessoas.crianca*1;
+    }
+
     const response = 
     {
         data,
         AddPessoas,
         ValorTotal,
-        ValorSemCrianca
+        ValorSemCrianca,
+        TotalCarnes,
+        TotalLitrosAdultos,
+        TotalLitrosCrianca
     };
    
     return(

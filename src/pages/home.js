@@ -6,7 +6,7 @@ export default function Home(props){
         <View>
             <ImageBackground resizeMode="cover" style={styles.image}source={require("../imgs/churrascada.jpg")}>
                 <View style={styles.container}>
-                    <TouchableOpacity style={styles.botao} title="Começar" onPress={() => props.navigation.navigate('participantes')}>
+                    <TouchableOpacity style={styles.botao} title="Avançar" onPress={() => props.navigation.navigate('participantes')}>
                         <Text style={styles.texto}>Calcular</Text>
                     </TouchableOpacity>
                 </View>
@@ -28,14 +28,9 @@ const styles = StyleSheet.create({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        // // padding: '150px 75px 1000px 75px',
-        // paddingTop: '150px',
-        // paddingLeft: '75px',
-        // paddingRight: '75px',
-        // paddingBottom: '100%',
     },
     botao:{
-        border: '3px solid #000',
+        border: '2px solid #000',
         borderRadius: '20px',
         display: 'flex',
         alignCenter: 'center',
