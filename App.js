@@ -22,37 +22,36 @@ export default function App(props){
             <AuthProvider>
 
                 <Stack.Navigator>
-                    <Stack.Screen name="home" component={Home} 
+                    {/* <Stack.Screen name="home" component={Home} 
                     options={{title:'Churrascada', 
                     headerShown: false, 
-                    }} />
-                    <Stack.Screen name="participantes" component={Participantes} 
+                    }} /> */}
+                    {/* <Stack.Screen name="participantes" component={Participantes} 
                     options={{title: 'Participantes', 
                     headerTintColor: 'white', 
                     headerStyle: {
-                        backgroundColor: 'black', 
+                        backgroundColor: 'black',
+                        height: 40, 
                         },
-                    }} />
-                    <Stack.Screen name="lista" component={Lista} 
-                    options={{title: 'Teste', 
-                    headerTintColor: 'white', 
-                    headerStyle: {
-                        backgroundColor: 'black', 
-                        },
-                    }} />
+                    headerTitleAlign: 'center',
+                    }} /> */}
                     <Stack.Screen name="carne" component={Carnes} 
                     options={{title: 'Carnes', 
                     headerTintColor: 'white', 
                     headerStyle: {
-                        backgroundColor: 'black', 
+                        backgroundColor: 'black',
+                        height: 40, 
                         },
+                    headerTitleAlign: 'center',
                     }} />
                     <Stack.Screen name="bebidas" component={Bebidas} 
                     options={{title: 'Bebidas', 
                     headerTintColor: 'white', 
                     headerStyle: {
-                        backgroundColor: 'black', 
+                        backgroundColor: 'black',
+                        height: 40, 
                         },
+                    headerTitleAlign: 'center',
                     }} />
                     
                 </Stack.Navigator>

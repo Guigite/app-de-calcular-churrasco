@@ -32,13 +32,14 @@ export default function BotaoMudanca(props){
 
 const styles = StyleSheet.create({
     btns:{
-        margin: '5px',
+        margin: 5,
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'row',
     },
     textos:{
-        fontSize: '25px',
-        margin: '5px',
+        fontSize: 25,
+        margin: 5,
+        color: '#FFF',
     }
 })

@@ -11,7 +11,7 @@ export default function Cortes(props){
                 unfillColor="#FFFFFF"
                 iconStyle={{ borderColor: "red" }}
                 innerIconStyle={{ borderWidth: 2 }}
-                textStyle={{ fontFamily: "Poppins, Sans-serif" }}
+                textStyle={{ fontFamily: "Poppins, Sans-serif", display: 'flex', fontWeight: 'bold', }}
             />
             <Text>
                 {props.corte}

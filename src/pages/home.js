@@ -3,7 +3,7 @@ import { StyleSheet , Text, View, TouchableOpacity, ImageBackground } from "reac
 
 export default function Home(props){
     return(
-        <View>
+        <View style={styles.container}>
             <ImageBackground resizeMode="cover" style={styles.image}source={require("../imgs/churrascada.jpg")}>
                 <View style={styles.container}>
                     <TouchableOpacity style={styles.botao} title="Avançar" onPress={() => props.navigation.navigate('participantes')}>
@@ -18,30 +18,30 @@ export default function Home(props){
 const styles = StyleSheet.create({
 
     image:{
-        width: '100vw',
-        height: '100vh',
+        width: '100%',
+        height: '100%',
     },
-
     container:{
         width: '100%',
-        height: '100vh',
+        height: '100%',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
     },
     botao:{
-        border: '2px solid #000',
-        borderRadius: '20px',
+        border: 2,
+        border: '#000 solid',
+        borderRadius: 20,
         display: 'flex',
         alignCenter: 'center',
         justifyContent: 'center',
         backgroundColor: '#62462B',
-        height: '75px',
-        width: '170px',
+        height: 75,
+        width: 170,
     },
     texto: {
         fontWeight: 'bold',
-        fontSize: '20px',
+        fontSize: 20,
         color: '#eecc60',
         display: 'flex',
         alignCenter: 'center',

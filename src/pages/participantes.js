@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import BotaoMudanca from "../components/btnAdicionarPessoas";
-import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
+import { View, Text, TouchableOpacity, StyleSheet, ImageBackground } from "react-native";
 import { MainContext } from "../context/mainContext";
 
     export default function Participantes(props){
@@ -8,57 +8,83 @@ import { MainContext } from "../context/mainContext";
     const [ninguem, setNinguem] = useState(false);
     
     return(
-        <View>
-            <Text style={styles.text}>Homens</Text>
-            <BotaoMudanca pessoa="homem"/>
-            <Text style={styles.text}>Mulheres</Text>
-            <BotaoMudanca pessoa="mulher"/>
-            <Text style={styles.text}>Crianças</Text>
-            <BotaoMudanca pessoa="crianca"/>
+        <View style={styles.container}>
+            <ImageBackground resizeMode="cover" style={styles.image}source={require("../imgs/churrascada.jpg")}>
 
-            {ninguem ? <Text>Adicione pelo menos uma pessoa</Text> : null}
+                <Text style={styles.text}>Homens</Text>
+                <BotaoMudanca pessoa="homem"/>
+                <Text style={styles.text}>Mulheres</Text>
+                <BotaoMudanca pessoa="mulher"/>
+                <Text style={styles.text}>Crianças</Text>
+                <BotaoMudanca pessoa="crianca"/>
 
-            <View>
-            <TouchableOpacity  
-                title="Avançar" 
-                onPress={() => { 
-                    if (data.pessoas.total == 0) {
-                        setNinguem(true)
-                    } else {
-                        setNinguem(false);
-                        props.navigation.navigate('lista');
-                    }
-                }}
-            >
-                <Text style={styles.textAvancar}>Avançar</Text>
-            </TouchableOpacity>
-            </View>        
+                {ninguem ? <Text style={styles.text1}>Adicione pelo menos uma pessoa</Text> : null}
+
+                <View>
+                <TouchableOpacity style={styles.avancar}  
+                    title="Avançar" 
+                    onPress={() => { 
+                        if (data.pessoas.total == 0) {
+                            setNinguem(true)
+                        } else {
+                            setNinguem(false);
+                            props.navigation.navigate('carne');
+                        }
+                    }}
+                >
+                    <Text style={styles.textAvancar}>Avançar</Text>
+                </TouchableOpacity>
+                </View>
+            </ImageBackground>
         </View>
-
     );
 }
 
 const styles = StyleSheet.create({
-    text:{
-        marginTop: '20px',
+    container: {
+        width: '100%',
+        height: '100%',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        color: '#000',
+    },
+    text1:{
+        marginTop: 20,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        color: '#F02',
         fontWeight: 'bold',
-        fontSize: '25px',
+        fontSize: 25,
+    },
+    text:{
+        marginTop: 20,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        color: '#FFF',
+        fontWeight: 'bold',
+        fontSize: 25,
+    },
+    avancar: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
     },
     textAvancar:{
         backgroundColor: '#62462B',
-        borderRadius: '20px',
-        padding: '5px',
-        // height: '10px',
-        marginTop: '30px',
+        borderRadius: 10,
+        padding: 8,
+        marginTop: 30,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
         color: '#eecc60',
         fontWeight: 'bold',
-        fontSize: '25px',
-    }
+        fontSize: 25,
+    },
+    image:{
+        width: '100%',
+        height: '100%',
+    },
 })
