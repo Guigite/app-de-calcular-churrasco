@@ -22,11 +22,11 @@ export default function App(props){
             <AuthProvider>
 
                 <Stack.Navigator>
-                    {/* <Stack.Screen name="home" component={Home} 
+                    <Stack.Screen name="home" component={Home} 
                     options={{title:'Churrascada', 
                     headerShown: false, 
-                    }} /> */}
-                    {/* <Stack.Screen name="participantes" component={Participantes} 
+                    }} /> 
+                    <Stack.Screen name="participantes" component={Participantes} 
                     options={{title: 'Participantes', 
                     headerTintColor: 'white', 
                     headerStyle: {
@@ -34,7 +34,7 @@ export default function App(props){
                         height: 40, 
                         },
                     headerTitleAlign: 'center',
-                    }} /> */}
+                    }} />
                     <Stack.Screen name="carne" component={Carnes} 
                     options={{title: 'Carnes', 
                     headerTintColor: 'white', 
@@ -53,7 +53,15 @@ export default function App(props){
                         },
                     headerTitleAlign: 'center',
                     }} />
-                    
+                    <Stack.Screen name="lista" component={Lista} 
+                    options={{title: 'TESTE', 
+                    headerTintColor: 'white', 
+                    headerStyle: {
+                        backgroundColor: 'black',
+                        height: 40, 
+                        },
+                    headerTitleAlign: 'center',
+                    }} />
                 </Stack.Navigator>
             </AuthProvider>
         </NavigationContainer>

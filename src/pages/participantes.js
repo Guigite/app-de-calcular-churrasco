@@ -4,7 +4,7 @@ import { View, Text, TouchableOpacity, StyleSheet, ImageBackground } from "react
 import { MainContext } from "../context/mainContext";
 
     export default function Participantes(props){
-    const {data} = useContext(MainContext);
+    const {data, ZeraCarne} = useContext(MainContext);
     const [ninguem, setNinguem] = useState(false);
     
     return(
@@ -18,7 +18,7 @@ import { MainContext } from "../context/mainContext";
                 <Text style={styles.text}>Crianças</Text>
                 <BotaoMudanca pessoa="crianca"/>
 
-                {ninguem ? <Text style={styles.text1}>Adicione pelo menos uma pessoa</Text> : null}
+                {ninguem ? <Text style={styles.text1}>Adicione pessoas ao churrasco</Text> : null}
 
                 <View>
                 <TouchableOpacity style={styles.avancar}  
@@ -30,6 +30,7 @@ import { MainContext } from "../context/mainContext";
                             setNinguem(false);
                             props.navigation.navigate('carne');
                         }
+                        ZeraCarne();
                     }}
                 >
                     <Text style={styles.textAvancar}>Avançar</Text>

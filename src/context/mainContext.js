@@ -14,6 +14,12 @@ export default function AuthProvider({children}){
             totalkilos: 0,
             totallitrosa: 0,
             totallitrosc: 0
+        },
+        quantidade:{
+            qntCarne:0,
+            qntBebida:0,
+            qntBebidac:0,
+            qntExtra:0,
         }
     }
 
@@ -47,6 +53,46 @@ export default function AuthProvider({children}){
         data.pessoas.totallitrosc = data.pessoas.crianca*1;
     }
 
+    const AddItem = (opcao) =>{
+        if(opcao == "addcarne"){
+            data.quantidade.qntCarne+=1;
+        }
+        else if(opcao == "tiracarne"){
+            data.quantidade.qntCarne-=1;
+        }
+        else if(opcao == "addextra"){
+            data.quantidade.qntExtra+=1;
+        }
+        else if(opcao == "tiraextra"){
+            data.quantidade.qntExtra-=1;
+        }
+        else if(opcao == "addBebida"){
+            data.quantidade.qntBebida+=1;
+        }
+        else if(opcao == "tiraBebida"){
+            data.quantidade.qntBebida-=1;
+        }
+    }
+
+    const AddBebidaCrianca = (opcao) => {
+        if(opcao == "addBebidas"){
+            data.quantidade.qntBebidac+=1;
+        }
+        else if(opcao == "tiraBebidas"){
+            data.quantidade.qntBebidac-=1;
+        }
+    }
+
+    const ZeraCarne = () =>{
+        data.quantidade.qntCarne = 0;
+        data.quantidade.qntExtra = 0;
+    }
+
+    const ZeraBebida = () =>{
+        data.quantidade.qntBebida = 0;
+        data.quantidade.qntBebidac = 0;
+    }
+
     const response = 
     {
         data,
@@ -55,7 +101,11 @@ export default function AuthProvider({children}){
         ValorSemCrianca,
         TotalCarnes,
         TotalLitrosAdultos,
-        TotalLitrosCrianca
+        TotalLitrosCrianca,
+        AddItem,
+        ZeraBebida,
+        ZeraCarne,
+        AddBebidaCrianca
     };
    
     return(

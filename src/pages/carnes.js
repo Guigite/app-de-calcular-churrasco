@@ -1,47 +1,47 @@
 import React from "react";
-import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
+import { View, Text, TouchableOpacity, StyleSheet, ImageBackground } from "react-native";
 import { useContext } from "react";
 import { MainContext } from "../context/mainContext";
-import Cortes from "../components/checkbox";
+import Opcoes from "../components/checkbox";
 
 export default function Carnes(props){
-    const {data, TotalCarnes} = useContext(MainContext);
+    const {data, TotalCarnes, ZeraBebida} = useContext(MainContext);
     
     TotalCarnes();
 
     return(
         <View>
-            {/* <ImageBackground resizeMode="cover" style={styles.image}source={require("../imgs/churrascada.jpg")}> */}
-                <Text>{data.pessoas.totalkilos}kg</Text>
+                <ImageBackground resizeMode="cover" style={styles.image}source={require("../imgs/churrascada.jpg")}>
+                <Text style={styles.kg}>Total de kilos: {data.pessoas.totalkilos}kg</Text>
                 <Text style={styles.text}>
                     Bovina
                 </Text>
-                <Cortes corte="Picanha"/>
-                <Cortes corte="Contra filé"/>
-                <Cortes corte="Maminha"/>
+                <Opcoes opcoes="Picanha" opcao1="addcarne" opcao2="tiracarne"/>
+                <Opcoes opcoes="Contra filé" opcao1="addcarne" opcao2="tiracarne"/>
+                <Opcoes opcoes="Maminha" opcao1="addcarne" opcao2="tiracarne"/>
                 <Text style={styles.text}>
                     Suína
                 </Text>
-                <Cortes corte="Costelinha"/>
-                <Cortes corte="Linguiça"/>
-                <Cortes corte="Picanha Suína"/>
+                <Opcoes opcoes="Costelinha" opcao1="addcarne" opcao2="tiracarne"/>
+                <Opcoes opcoes="Linguiça" opcao1="addcarne" opcao2="tiracarne"/>
+                <Opcoes opcoes="Picanha Suína" opcao1="addcarne" opcao2="tiracarne"/>
                 <Text style={styles.text}>
                     Ave
                 </Text>
-                <Cortes corte="Coxa e Sobrecoxa"/>
-                <Cortes corte="Coração"/>
-                <Cortes corte="Asa"/>
+                <Opcoes opcoes="Coxa e Sobrecoxa" opcao1="addcarne" opcao2="tiracarne"/>
+                <Opcoes opcoes="Coração" opcao1="addcarne" opcao2="tiracarne"/>
+                <Opcoes opcoes="Asa" opcao1="addcarne" opcao2="tiracarne"/>
                 <Text style={styles.text}>
                     Extra
                 </Text>
-                <Cortes corte="Queijo"/>
-                <Cortes corte="Pão de alho"/>
+                <Opcoes opcoes="Queijo" opcao1="addextra" opcao2="tiraextra"/>
+                <Opcoes opcoes="Pão de alho" opcao1="addextra" opcao2="tiraextra"/>
                 <TouchableOpacity style={styles.avancar} 
                     title="Avançar" 
-                    onPress={() => props.navigation.navigate('bebidas')}>
+                    onPress={() => {props.navigation.navigate('bebidas'); ZeraBebida();}}>
                     <Text style={styles.textAvancar}>Avançar</Text>
                 </TouchableOpacity>
-            {/* </ImageBackground> */}
+                </ImageBackground>
         </View>
     );
 }
@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        color: '#000',
+        color: '#fff',
         fontWeight: 'bold',
         fontSize: 25,
     },
@@ -74,4 +74,13 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
+    image:{
+        flex: 1,
+    },
+    kg:{
+        fontWeight:'bold',
+        color: '#fff',
+        alignItems:'center',
+        justifyContent: 'center',
+    }
 })
