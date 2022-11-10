@@ -29,8 +29,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     botao:{
-        border: 2,
-        border: '#000 solid',
+        borderColor: '#000',
+        borderWidth: 3,
         borderRadius: 20,
         display: 'flex',
         alignCenter: 'center',
@@ -46,5 +46,6 @@ const styles = StyleSheet.create({
         display: 'flex',
         alignCenter: 'center',
         justifyContent: 'center',
+        textAlign: 'center',
     },
 });

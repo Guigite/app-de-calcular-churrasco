@@ -1,9 +1,10 @@
 import React from 'react';
-import {SafeAreaView,StyleSheet,View,Text,Image,TouchableOpacity, Linking, ImageBackground} from 'react-native';
+import {SafeAreaView,StyleSheet,View,Text,Image,TouchableOpacity, Linking, ImageBackground, ScrollView} from 'react-native';
 
 export default function Receitas(){
   return (
     <SafeAreaView style={{flex: 1}}>
+    <ScrollView>
       <View style={styles.container}>
       <ImageBackground resizeMode="cover" style={styles.image}source={require("../imgs/churrascada.jpg")}>
         <TouchableOpacity
@@ -31,7 +32,7 @@ export default function Receitas(){
             style={styles.imagembotao}
           />
           <Text style={styles.textobotao}>
-            Contra Filé
+            Contra File
           </Text>
         </TouchableOpacity>
         <TouchableOpacity
@@ -69,7 +70,7 @@ export default function Receitas(){
             Linking.openURL('https://www.youtube.com/watch?v=_EAGvTzDp_U');
           }}>
           <Image
-            source={require('../imgs/Linguiça.PNG')}
+            source={require('../imgs/Linguica.PNG')}
             style={styles.imagembotao}
           />
           <Text style={styles.textobotao}>
@@ -148,9 +149,10 @@ export default function Receitas(){
         </TouchableOpacity>
         </ImageBackground>
       </View>
+    </ScrollView>
     </SafeAreaView>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -182,12 +184,8 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     fontSize: 30,
   },
-  buttonIconSeparatorStyle: {
-    backgroundColor: '#fff',
-    width: 1,
-    height: 40,
-  },
   image: {
-    flex: 1,
+    width: '100%',
+    height: '100%',
   }
 });

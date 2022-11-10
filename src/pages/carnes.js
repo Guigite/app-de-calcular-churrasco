@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, TouchableOpacity, StyleSheet, ImageBackground } from "react-native";
+import { View, Text, TouchableOpacity, StyleSheet, ImageBackground, ScrollView } from "react-native";
 import { useContext } from "react";
 import { MainContext } from "../context/mainContext";
 import Opcoes from "../components/checkbox";
@@ -10,8 +10,9 @@ export default function Carnes(props){
     TotalCarnes();
 
     return(
+      <ScrollView>
         <View>
-                <ImageBackground resizeMode="cover" style={styles.image}source={require("../imgs/churrascada.jpg")}>
+            <ImageBackground resizeMode="cover" style={styles.image}source={require("../imgs/churrascada.jpg")}>
                 <Text style={styles.kg}>Total de kilos: {data.pessoas.totalkilos}kg</Text>
                 <Text style={styles.text}>
                     Bovina
@@ -36,22 +37,32 @@ export default function Carnes(props){
                 </Text>
                 <Opcoes opcoes="Queijo" opcao1="addextra" opcao2="tiraextra"/>
                 <Opcoes opcoes="Pão de alho" opcao1="addextra" opcao2="tiraextra"/>
-                <TouchableOpacity style={styles.avancar} 
-                    title="Avançar" 
-                    onPress={() => {props.navigation.navigate('bebidas'); ZeraBebida();}}>
-                    <Text style={styles.textAvancar}>Avançar</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.avancar} 
-                    title="Avançar" 
-                    onPress={() => {props.navigation.navigate('receitas'); ZeraBebida();}}>
-                    <Text style={styles.textAvancar}>Receitas</Text>
-                </TouchableOpacity>
-                </ImageBackground>
+                <View style={styles.botoes}>
+                  <TouchableOpacity style={styles.avancar} 
+                      title="Avançar" 
+                      onPress={() => {props.navigation.navigate('bebidas'); ZeraBebida();}}>
+                      <Text style={styles.textAvancar}>Avançar</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity 
+                      title="Avançar" 
+                      onPress={() => {props.navigation.navigate('receitas'); ZeraBebida();}}>
+                      <Text style={styles.textAvancar}>Receitas</Text>
+                  </TouchableOpacity>
+                </View>
+            </ImageBackground>
         </View>
+      </ScrollView>
     );
 }
 
 const styles = StyleSheet.create({
+    botoes: {
+        flexDirection: 'row',
+        display: 'flex',
+        alignItems: "center",
+        justifyContent: "center",
+        marginBottom: 35,
+    },
     text:{
         marginTop: 20,
         display: 'flex',
@@ -75,12 +86,11 @@ const styles = StyleSheet.create({
         width: 120,
     },
     avancar: {
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
+        marginRight: 20,
     },
     image:{
-        flex: 1,
+        width: '100%',
+        height: '100%',
     },
     kg:{
         fontWeight:'bold',

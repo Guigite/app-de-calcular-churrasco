@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View, Pressable, StyleSheet } from "react-native-web";
+import { Text, View, Pressable, StyleSheet } from "react-native";
 
 import AuthProvider from "./src/context/mainContext";
 
@@ -7,7 +7,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
 import Participantes from "./src/pages/participantes";
-import Home from "./src/pages/Home";
+import Home from "./src/pages/home";
 import Lista from "./src/pages/lista";
 import Carnes from "./src/pages/carnes";
 import Bebidas from "./src/pages/bebidas";
@@ -32,7 +32,7 @@ export default function App(props){
                     headerTintColor: 'white', 
                     headerStyle: {
                         backgroundColor: 'black',
-                        height: 40, 
+                        height: 100, 
                         },
                     headerTitleAlign: 'center',
                     }} />
@@ -41,7 +41,7 @@ export default function App(props){
                     headerTintColor: 'white', 
                     headerStyle: {
                         backgroundColor: 'black',
-                        height: 40, 
+                        height: 100, 
                         },
                     headerTitleAlign: 'center',
                     }} />
@@ -50,7 +50,7 @@ export default function App(props){
                     headerTintColor: 'white', 
                     headerStyle: {
                         backgroundColor: 'black',
-                        height: 40, 
+                        height: 100, 
                         },
                     headerTitleAlign: 'center',
                     }} />
@@ -59,7 +59,7 @@ export default function App(props){
                     headerTintColor: 'white', 
                     headerStyle: {
                         backgroundColor: 'black',
-                        height: 40, 
+                        height: 100, 
                         },
                     headerTitleAlign: 'center',
                     }} />
@@ -68,7 +68,7 @@ export default function App(props){
                     headerTintColor: 'white', 
                     headerStyle: {
                         backgroundColor: 'black',
-                        height: 40, 
+                        height: 100, 
                         },
                     headerTitleAlign: 'center',
                     }} />

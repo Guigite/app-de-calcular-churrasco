@@ -57,6 +57,7 @@ const styles = StyleSheet.create({
         color: '#F02',
         fontWeight: 'bold',
         fontSize: 25,
+        textAlign: "center",
     },
     text:{
         marginTop: 20,
@@ -66,6 +67,7 @@ const styles = StyleSheet.create({
         color: '#FFF',
         fontWeight: 'bold',
         fontSize: 25,
+        textAlign: 'center',
     },
     avancar: {
         display: 'flex',
@@ -88,4 +90,4 @@ const styles = StyleSheet.create({
         width: '100%',
         height: '100%',
     },
-})
+});

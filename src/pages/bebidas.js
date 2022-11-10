@@ -30,15 +30,6 @@ export default function Bebidas(props){
 }
 
 const styles = StyleSheet.create({
-    text:{
-        marginTop: 20,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        color: '#fff',
-        fontWeight: 'bold',
-        fontSize: 25,
-    },
     textAvancar:{
         backgroundColor: '#62462B',
         borderRadius: 10,
