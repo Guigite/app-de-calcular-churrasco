@@ -1,5 +1,5 @@
 import React from 'react';
-import {SafeAreaView,StyleSheet,View,Text,Image,TouchableOpacity, Linking, ImageBackground, ScrollView} from 'react-native';
+import {SafeAreaView, StyleSheet, View, Text, Image, TouchableOpacity, Linking, ImageBackground, ScrollView} from 'react-native';
 
 export default function Receitas(){
   return (

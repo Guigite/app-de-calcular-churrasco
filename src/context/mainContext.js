@@ -21,7 +21,7 @@ export default function AuthProvider({children}){
             qntBebidac:0,
             qntExtra:0,
         },
-        cortes: [
+        "Cortes": [
             {
                 nome: "Picanha",
                 status: false,
@@ -85,7 +85,7 @@ export default function AuthProvider({children}){
                 preco: 15.96
             },
         ],
-        bebidas: [
+        "Bebidas": [
             {
                 nome: "Água",
                 status: false,
@@ -114,8 +114,7 @@ export default function AuthProvider({children}){
                 preco: 12.00
             }
         ],
-
-        extras: [
+        "Extras": [
             {
                 nome: "Queijo",
                 status: false,
@@ -129,7 +128,13 @@ export default function AuthProvider({children}){
                 precototal: 0,
                 preco: 12.96
             }
-        ]
+        ],
+        conta:{
+            quantidadekilos:0,
+            quantidadelitro:0,
+            quantidadelitroc: 0,
+            quantidadeextra: 0 
+        }
     }
 
     const AddPessoas = (pessoa, quantidade) => {
@@ -162,35 +167,61 @@ export default function AuthProvider({children}){
         data.pessoas.totallitrosc = data.pessoas.crianca*1;
     }
 
-    const AddItem = (opcao) =>{
-        if(opcao == "addcarne"){
-            data.quantidade.qntCarne+=1;
-        }
-        else if(opcao == "tiracarne"){
-            data.quantidade.qntCarne-=1;
-        }
-        else if(opcao == "addextra"){
-            data.quantidade.qntExtra+=1;
-        }
-        else if(opcao == "tiraextra"){
-            data.quantidade.qntExtra-=1;
-        }
-        else if(opcao == "addBebida"){
-            data.quantidade.qntBebida+=1;
-        }
-        else if(opcao == "tiraBebida"){
-            data.quantidade.qntBebida-=1;
+    const ModificaItem = (classe, item, estado) => {
+        if(estado == false){
+            if(classe == "Cortes"){
+                data.quantidade.qntCarne+=1
+            }else if(classe == "Bebidas"){
+                data.quantidade.qntBebida+=1
+                if(item != "Cerveja"){
+                    data.quantidade.qntBebidac+=1
+                }
+            }else if(classe == "Extras"){
+                data.quantidade.qntExtra+=1
+            }
+        } else if(estado == true){
+            if(classe == "Cortes"){
+                data.quantidade.qntCarne-=1
+            }else if(classe == "Bebidas"){
+                data.quantidade.qntBebida-=1
+                if(item != "Cerveja"){
+                    data.quantidade.qntBebidac-=1
+                }
+            }else if(classe == "Extras"){
+                data.quantidade.qntExtra-=1
+            }
         }
     }
 
-    const AddBebidaCrianca = (opcao) => {
-        if(opcao == "addBebidas"){
-            data.quantidade.qntBebidac+=1;
-        }
-        else if(opcao == "tiraBebidas"){
-            data.quantidade.qntBebidac-=1;
-        }
-    }
+    // const AddItem = (opcao) =>{
+    //     if(opcao == "addcarne"){
+    //         data.quantidade.qntCarne+=1;
+    //     }
+    //     else if(opcao == "tiracarne"){
+    //         data.quantidade.qntCarne-=1;
+    //     }
+    //     else if(opcao == "addextra"){
+    //         data.quantidade.qntExtra+=1;
+    //     }
+    //     else if(opcao == "tiraextra"){
+    //         data.quantidade.qntExtra-=1;
+    //     }
+    //     else if(opcao == "addBebida"){
+    //         data.quantidade.qntBebida+=1;
+    //     }
+    //     else if(opcao == "tiraBebida"){
+    //         data.quantidade.qntBebida-=1;
+    //     }
+    // }
+
+    // const AddBebidaCrianca = (opcao) => {
+    //     if(opcao == "addBebidas"){
+    //         data.quantidade.qntBebidac+=1;
+    //     }
+    //     else if(opcao == "tiraBebidas"){
+    //         data.quantidade.qntBebidac-=1;
+    //     }
+    // }
 
     const ZeraCarne = () =>{
         data.quantidade.qntCarne = 0;
@@ -202,6 +233,21 @@ export default function AuthProvider({children}){
         data.quantidade.qntBebidac = 0;
     }
 
+    const MudaStatus = (classe, posicao, estado) => {
+        data[classe][posicao].status = estado;
+    }
+
+    const DivideCarne = () => {
+        data.conta.quantidadekilos = parseFloat((data.pessoas.totalkilos/data.quantidade.qntCarne).toFixed(2));
+    }
+    const DivideBebida = () => {
+        data.conta.quantidadelitro = parseFloat((data.pessoas.totallitrosa/data.quantidade.qntBebida).toFixed(2));
+        data.conta.quantidadelitroc = parseFloat((data.pessoas.totallitrosc/data.quantidade.qntBebidac).toFixed(2));
+    }
+    const SeparaExtra = () =>{
+        data.conta.quantidadeextra = (data.pessoas.total*0.15)*data.quantidade.qntExtra;
+    }
+
     const response = 
     {
         data,
@@ -211,10 +257,16 @@ export default function AuthProvider({children}){
         TotalCarnes,
         TotalLitrosAdultos,
         TotalLitrosCrianca,
-        AddItem,
+        // AddItem,
         ZeraBebida,
         ZeraCarne,
-        AddBebidaCrianca
+        // AddBebidaCrianca,
+        MudaStatus,
+        ModificaItem,
+        DivideBebida,
+        DivideCarne,
+        SeparaExtra,
+        Conta
     };
    
     return(

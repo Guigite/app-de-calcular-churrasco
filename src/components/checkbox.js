@@ -1,11 +1,13 @@
 import React, {useContext, useState} from "react";
 import BouncyCheckbox from "react-native-bouncy-checkbox";
-import { View, Text, TouchableOpacity, StyleSheet} from "react-native";
+import { View, Text, StyleSheet} from "react-native";
 import { MainContext } from "../context/mainContext";
 
 export default function Opcoes(props){
-    const {data,AddItem,AddBebidaCrianca} = useContext(MainContext);
-    const [checkboxState, setCheckboxState] = useState(false);
+    const {data, MudaStatus, ModificaItem} = useContext(MainContext);
+    const [checkboxState, setCheckboxState] = useState(data[props.classe][props.posicao].status);
+
+    MudaStatus(props.classe, props.posicao, checkboxState);
     
     return(
         <View>
@@ -17,19 +19,12 @@ export default function Opcoes(props){
                 innerIconStyle={{ borderWidth: 2 }}
                 textStyle={{ fontFamily: "Poppins, Sans-serif", display: 'flex', fontWeight: 'bold', }}
                 onPress={() => {
-                    if(checkboxState == false){
-                        AddItem(props.opcao1);
-                        AddBebidaCrianca(props.opcao3);
-                    }
-                    else if(checkboxState == true){
-                        AddItem(props.opcao2);
-                        AddBebidaCrianca(props.opcao4);
-                    }
+                    ModificaItem(props.classe, props.nome, checkboxState);
                     setCheckboxState(!checkboxState) 
                 }}
             />
             <Text style={styles.text}>
-                {props.opcoes}
+                {props.nome}
             </Text>
         </View>
     );

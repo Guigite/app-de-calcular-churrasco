@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 import { View, Text, TouchableOpacity, ImageBackground, StyleSheet } from "react-native";
 import { MainContext } from "../context/mainContext";
-import Opcoes from "../components/checkbox";
+import Secao from "../components/secao";
 
 
 export default function Bebidas(props){
-    const {data, TotalLitrosAdultos, TotalLitrosCrianca} = useContext(MainContext);
+    const {data, TotalLitrosAdultos, TotalLitrosCrianca, DivideCarne, DivideBebida, SeparaExtra} = useContext(MainContext);
 
     TotalLitrosAdultos();
     TotalLitrosCrianca();
@@ -15,13 +15,20 @@ export default function Bebidas(props){
             <ImageBackground resizeMode="cover" style={styles.image}source={require("../imgs/churrascada.jpg")}>
             <Text style={styles.litros}>Total de litros para Adultos: {data.pessoas.totallitrosa }L</Text>
             <Text style={styles.litrosc}>Total de litros para Crianças: {data.pessoas.totallitrosc}L</Text>            
-                <Opcoes opcao1="addBebida" opcao2="tiraBebida" opcao3="addBebidas" opcao4="tiraBebidas" opcoes="Água"/>
+                
+                <Secao classe="Bebidas" /> 
+
+                {/* <Opcoes opcao1="addBebida" opcao2="tiraBebida" opcao3="addBebidas" opcao4="tiraBebidas" opcoes="Água"/>
                 <Opcoes opcao1="addBebida" opcao2="tiraBebida" opcao3="addBebidas" opcao4="tiraBebidas" opcoes="Suco"/>
                 <Opcoes opcao1="addBebida" opcao2="tiraBebida" opcao3="addBebidas" opcao4="tiraBebidas" opcoes="Refrigerante"/>
-                <Opcoes opcao1="addBebida" opcao2="tiraBebida" opcoes="Cerveja"/>
+                <Opcoes opcao1="addBebida" opcao2="tiraBebida" opcoes="Cerveja"/> */}
             <TouchableOpacity style={styles.avancar}  
                 title="Avançar" 
-                onPress={() => props.navigation.navigate('lista')}>
+                onPress={() => {props.navigation.navigate('lista')
+                                DivideBebida();
+                                DivideCarne();
+                                SeparaExtra(); 
+                            }}>
                 <Text style={styles.textAvancar}>Avançar</Text>
             </TouchableOpacity>
             </ImageBackground>

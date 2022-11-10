@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, TouchableOpacity, StyleSheet, ImageBackground, ScrollView } from "react-native";
 import { useContext } from "react";
 import { MainContext } from "../context/mainContext";
-import Opcoes from "../components/checkbox";
+import Secao from "../components/secao";
 
 export default function Carnes(props){
     const {data, TotalCarnes, ZeraBebida} = useContext(MainContext);
@@ -14,29 +14,33 @@ export default function Carnes(props){
         <View>
             <ImageBackground resizeMode="cover" style={styles.image}source={require("../imgs/churrascada.jpg")}>
                 <Text style={styles.kg}>Total de kilos: {data.pessoas.totalkilos}kg</Text>
-                <Text style={styles.text}>
+                
+                <Secao classe="Cortes"/>
+                <Secao classe="Extras"/>
+                
+                {/* <Text style={styles.text}>
                     Bovina
-                </Text>
-                <Opcoes opcoes="Picanha" opcao1="addcarne" opcao2="tiracarne"/>
+                </Text> */}
+                {/* <Opcoes opcoes="Picanha" opcao1="addcarne" opcao2="tiracarne"/>
                 <Opcoes opcoes="Contra filé" opcao1="addcarne" opcao2="tiracarne"/>
-                <Opcoes opcoes="Maminha" opcao1="addcarne" opcao2="tiracarne"/>
-                <Text style={styles.text}>
+                <Opcoes opcoes="Maminha" opcao1="addcarne" opcao2="tiracarne"/> */}
+                {/* <Text style={styles.text}>
                     Suína
-                </Text>
-                <Opcoes opcoes="Costelinha" opcao1="addcarne" opcao2="tiracarne"/>
+                </Text> */}
+                {/* <Opcoes opcoes="Costelinha" opcao1="addcarne" opcao2="tiracarne"/>
                 <Opcoes opcoes="Linguiça" opcao1="addcarne" opcao2="tiracarne"/>
-                <Opcoes opcoes="Picanha Suína" opcao1="addcarne" opcao2="tiracarne"/>
-                <Text style={styles.text}>
+                <Opcoes opcoes="Picanha Suína" opcao1="addcarne" opcao2="tiracarne"/> */}
+                {/* <Text style={styles.text}>
                     Ave
-                </Text>
-                <Opcoes opcoes="Coxa e Sobrecoxa" opcao1="addcarne" opcao2="tiracarne"/>
+                </Text> */}
+                {/* <Opcoes opcoes="Coxa e Sobrecoxa" opcao1="addcarne" opcao2="tiracarne"/>
                 <Opcoes opcoes="Coração" opcao1="addcarne" opcao2="tiracarne"/>
-                <Opcoes opcoes="Asa" opcao1="addcarne" opcao2="tiracarne"/>
-                <Text style={styles.text}>
+                <Opcoes opcoes="Asa" opcao1="addcarne" opcao2="tiracarne"/> */}
+                {/* <Text style={styles.text}>
                     Extra
-                </Text>
-                <Opcoes opcoes="Queijo" opcao1="addextra" opcao2="tiraextra"/>
-                <Opcoes opcoes="Pão de alho" opcao1="addextra" opcao2="tiraextra"/>
+                </Text> */}
+                {/* <Opcoes opcoes="Queijo" opcao1="addextra" opcao2="tiraextra"/>
+                <Opcoes opcoes="Pão de alho" opcao1="addextra" opcao2="tiraextra"/> */}
                 <View style={styles.botoes}>
                   <TouchableOpacity style={styles.avancar} 
                       title="Avançar" 
@@ -62,15 +66,6 @@ const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "center",
         marginBottom: 35,
-    },
-    text:{
-        marginTop: 20,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        color: '#fff',
-        fontWeight: 'bold',
-        fontSize: 25,
     },
     textAvancar:{
         backgroundColor: '#62462B',

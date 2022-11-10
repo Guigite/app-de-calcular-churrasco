@@ -1,9 +1,11 @@
 import React, { useContext } from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity, FlatList } from "react-native";
+import Listar from "../components/listar";
 import { MainContext } from "../context/mainContext";
 
 export default function Lista(props){
-    const {data} = useContext(MainContext);
+    const {data, Conta} = useContext(MainContext);
+
     
     return(
         <View>
@@ -16,6 +18,10 @@ export default function Lista(props){
             <Text>Total de Bebidas p/ Adultos: {data.quantidade.qntBebida}</Text>
             <Text>Total de Bebidas p/ Crianças: {data.quantidade.qntBebidac}</Text>
             <Text>Total de Extra: {data.quantidade.qntExtra}</Text>
+
+            <Listar classe="Cortes"/> 
+            <Listar classe="Bebidas"/> 
+            <Listar classe="Extras"/> 
         
             <View>
                 <TouchableOpacity title="Avançar" onPress={() => props.navigation.navigate('home')}>
