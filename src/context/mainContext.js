@@ -20,7 +20,116 @@ export default function AuthProvider({children}){
             qntBebida:0,
             qntBebidac:0,
             qntExtra:0,
-        }
+        },
+        cortes: [
+            {
+                nome: "Picanha",
+                status: false,
+                precototal: 0,
+                preco: 69.96
+            },
+            
+            {
+                nome: "Contra Filé",
+                status: false,
+                precototal: 0,
+                preco: 45.96
+            },
+            
+            {
+                nome: "Maminha",
+                status: false,
+                precototal: 0,
+                preco: 49.96
+            },
+            
+            {
+                nome: "Costelinha",
+                status: false,
+                precototal: 0,
+                preco: 34.96
+            },
+
+            {
+                nome:"Liguiça",
+                status: false,
+                precototal: 0,
+                preco: 18.96
+            },
+            
+            {
+                nome: "Picanha Suína",
+                status: false,
+                precototal: 0,
+                preco: 29.96
+            },
+            
+            {
+                nome: "Coxa e Sobrecoxa",
+                status: false,
+                precototal: 0,
+                preco: 17.96
+            },
+
+            {
+                nome: "Coração",
+                status: false,
+                precototal: 0,
+                preco: 25.46
+            },
+
+            {
+                nome: "Asa",
+                status: false,
+                precototal: 0,
+                preco: 15.96
+            },
+        ],
+        bebidas: [
+            {
+                nome: "Água",
+                status: false,
+                precototal: 0,
+                preco: 5.00
+            },
+
+            {
+                nome: "Refrigerante",
+                status: false,
+                precototal: 0,
+                preco: 8.00
+            },
+
+            {
+                nome: "Suco",
+                status: false,
+                precototal: 0,
+                preco: 5.50
+            },
+
+            {
+                nome: "Cerveja",
+                status: false,
+                precototal: 0,
+                preco: 12.00
+            }
+        ],
+
+        extras: [
+            {
+                nome: "Queijo",
+                status: false,
+                precototal: 0,
+                preco: 23.96
+            },
+
+            {
+                nome: "Pão de Alho",
+                status: false,
+                precototal: 0,
+                preco: 12.96
+            }
+        ]
     }
 
     const AddPessoas = (pessoa, quantidade) => {
