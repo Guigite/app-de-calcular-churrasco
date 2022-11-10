@@ -266,7 +266,6 @@ export default function AuthProvider({children}){
         DivideBebida,
         DivideCarne,
         SeparaExtra,
-        Conta
     };
    
     return(
