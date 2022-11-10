@@ -11,6 +11,7 @@ import Home from "./src/pages/Home";
 import Lista from "./src/pages/lista";
 import Carnes from "./src/pages/carnes";
 import Bebidas from "./src/pages/bebidas";
+import Receitas from "./src/pages/receitas";
 
 
 const Stack = createStackNavigator();
@@ -44,6 +45,15 @@ export default function App(props){
                         },
                     headerTitleAlign: 'center',
                     }} />
+                    <Stack.Screen name="receitas" component={Receitas} 
+                    options={{title: 'Receitas', 
+                    headerTintColor: 'white', 
+                    headerStyle: {
+                        backgroundColor: 'black',
+                        height: 40, 
+                        },
+                    headerTitleAlign: 'center',
+                    }} />
                     <Stack.Screen name="bebidas" component={Bebidas} 
                     options={{title: 'Bebidas', 
                     headerTintColor: 'white', 
@@ -54,7 +64,7 @@ export default function App(props){
                     headerTitleAlign: 'center',
                     }} />
                     <Stack.Screen name="lista" component={Lista} 
-                    options={{title: 'TESTE', 
+                    options={{title: 'Lista', 
                     headerTintColor: 'white', 
                     headerStyle: {
                         backgroundColor: 'black',

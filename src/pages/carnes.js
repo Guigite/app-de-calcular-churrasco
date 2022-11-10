@@ -41,6 +41,11 @@ export default function Carnes(props){
                     onPress={() => {props.navigation.navigate('bebidas'); ZeraBebida();}}>
                     <Text style={styles.textAvancar}>Avançar</Text>
                 </TouchableOpacity>
+                <TouchableOpacity style={styles.avancar} 
+                    title="Avançar" 
+                    onPress={() => {props.navigation.navigate('receitas'); ZeraBebida();}}>
+                    <Text style={styles.textAvancar}>Receitas</Text>
+                </TouchableOpacity>
                 </ImageBackground>
         </View>
     );
