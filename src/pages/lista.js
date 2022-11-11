@@ -18,6 +18,9 @@ export default function Lista(props){
             <Text>Total de Bebidas p/ Adultos: {data.quantidade.qntBebida}</Text>
             <Text>Total de Bebidas p/ Crianças: {data.quantidade.qntBebidac}</Text>
             <Text>Total de Extra: {data.quantidade.qntExtra}</Text>
+            <Text>Total de kg por corte: {data.conta.quantidadekilos}</Text>
+            <Text>Total de l por bebida: {data.conta.quantidadelitrostotais}</Text>
+            <Text>Total de kg extra: {data.conta.quantidadeextra}</Text>
 
             <Listar classe="Cortes"/> 
             <Listar classe="Bebidas"/> 

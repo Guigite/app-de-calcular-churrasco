@@ -133,7 +133,9 @@ export default function AuthProvider({children}){
             quantidadekilos:0,
             quantidadelitro:0,
             quantidadelitroc: 0,
-            quantidadeextra: 0 
+            quantidadeextra: 0,
+            quantidadelitrostotais:0,
+            gastototal: 0
         }
     }
 
@@ -213,9 +215,32 @@ export default function AuthProvider({children}){
     const DivideBebida = () => {
         data.conta.quantidadelitro = parseFloat((data.pessoas.totallitrosa/data.quantidade.qntBebida).toFixed(2));
         data.conta.quantidadelitroc = parseFloat((data.pessoas.totallitrosc/data.quantidade.qntBebidac).toFixed(2));
+        data.conta.quantidadelitrostotais = data.conta.quantidadelitro+data.conta.quantidadelitroc;
     }
     const SeparaExtra = () =>{
-        data.conta.quantidadeextra = (data.pessoas.total*0.15)*data.quantidade.qntExtra;
+        data.conta.quantidadeextra = parseFloat(((data.pessoas.total*0.15)*data.quantidade.qntExtra).toFixed(2));
+    }
+
+    const ContaChurrasco = () =>{
+        data["Cortes"].forEach(element =>{
+            element.precototal = parseFloat((data.conta.quantidadekilos*element.preco).toFixed(2));
+            data.conta.gastototal+=element.precototal;
+        });
+
+        data["Extras"].forEach(element =>{
+            element.precototal = parseFloat((data.conta.quantidadeextra*element.preco).toFixed(2));
+            data.conta.gastototal+=element.precototal;
+        });
+
+        data["Bebidas"].forEach(element =>{
+            element.precototal = parseFloat((data.conta.quantidadelitro*element.preco).toFixed(2));
+            data.conta.gastototal+=element.precototal;
+
+            if (element.nome != "Cerveja"){
+                element.precototal += parseFloat((data.conta.quantidadelitroc*element.preco).toFixed(2));
+                data.conta.gastototal+=element.precototal;
+            }
+        })
     }
 
     const response = 
@@ -227,15 +252,14 @@ export default function AuthProvider({children}){
         TotalCarnes,
         TotalLitrosAdultos,
         TotalLitrosCrianca,
-        // AddItem,
         ZeraBebida,
         ZeraCarne,
-        // AddBebidaCrianca,
         MudaStatus,
         ModificaItem,
         DivideBebida,
         DivideCarne,
         SeparaExtra,
+        ContaChurrasco
     };
    
     return(

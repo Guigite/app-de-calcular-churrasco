@@ -5,7 +5,7 @@ import Secao from "../components/secao";
 
 
 export default function Bebidas(props){
-    const {data, TotalLitrosAdultos, TotalLitrosCrianca, DivideCarne, DivideBebida, SeparaExtra} = useContext(MainContext);
+    const {data, TotalLitrosAdultos, TotalLitrosCrianca, DivideCarne, DivideBebida, SeparaExtra, ContaChurrasco } = useContext(MainContext);
 
     TotalLitrosAdultos();
     TotalLitrosCrianca();
@@ -24,6 +24,10 @@ export default function Bebidas(props){
                                   DivideBebida();
                                   DivideCarne();
                                   SeparaExtra(); 
+<<<<<<< Updated upstream
+=======
+                                  ContaChurrasco();
+>>>>>>> Stashed changes
                               }}>
                   <Text style={styles.textAvancar}>Avançar</Text>
               </TouchableOpacity>
@@ -45,6 +49,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 25,
         width: 120,
+        textAlign: 'center',
     },
     avancar: {
         display: 'flex',
@@ -58,9 +63,11 @@ const styles = StyleSheet.create({
     litros:{
         fontWeight:'bold',
         color:'#fff',
+        textAlign: 'center',
     },
     litrosc:{
         fontWeight:'bold',
         color:'#fff',
+        textAlign: 'center',
     }
 })
