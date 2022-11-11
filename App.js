@@ -11,6 +11,8 @@ import Lista from "./src/pages/lista";
 import Carnes from "./src/pages/carnes";
 import Bebidas from "./src/pages/bebidas";
 import Receitas from "./src/pages/receitas";
+import Info from "./src/pages/info";
+import Final from "./src/pages/final";
 
 
 const Stack = createStackNavigator();
@@ -71,6 +73,24 @@ export default function App(props){
                         },
                     headerTitleAlign: 'center',
                     }} />
+                    {/* <Stack.Screen name="info" component={Info} 
+                    options={{title: 'Informações', 
+                    headerTintColor: 'white', 
+                    headerStyle: {
+                        backgroundColor: 'black',
+                        height: 100, 
+                        },
+                    headerTitleAlign: 'center',
+                    }} />
+                    <Stack.Screen name="final" component={Final} 
+                    options={{title: 'Churrasco', 
+                    headerTintColor: 'white', 
+                    headerStyle: {
+                        backgroundColor: 'black',
+                        height: 100, 
+                        },
+                    headerTitleAlign: 'center',
+                    }} /> */}
                 </Stack.Navigator>
             </AuthProvider>
         </NavigationContainer>

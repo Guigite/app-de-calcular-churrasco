@@ -85,6 +85,23 @@ export default function AuthProvider({children}){
                 preco: 15.96
             },
         ],
+        
+        "Extras": [
+            {
+                nome: "Queijo",
+                status: false,
+                precototal: 0,
+                preco: 23.96
+            },
+
+            {
+                nome: "Pão de Alho",
+                status: false,
+                precototal: 0,
+                preco: 12.96
+            }
+        ],
+        
         "Bebidas": [
             {
                 nome: "Água",
@@ -114,28 +131,22 @@ export default function AuthProvider({children}){
                 preco: 12.00
             }
         ],
-        "Extras": [
-            {
-                nome: "Queijo",
-                status: false,
-                precototal: 0,
-                preco: 23.96
-            },
-
-            {
-                nome: "Pão de Alho",
-                status: false,
-                precototal: 0,
-                preco: 12.96
-            }
-        ],
+        
         conta:{
             quantidadekilos:0,
             quantidadelitro:0,
             quantidadelitroc: 0,
             quantidadeextra: 0,
             quantidadelitrostotais:0,
-            gastototal: 0
+            gastototal: 0,
+            rateiocomcrianca: 0,
+            rateiosemcrianca: 0
+        },
+
+        info: {
+            numero: "",
+            nome: "",
+            cep: ""
         }
     }
 
@@ -224,23 +235,39 @@ export default function AuthProvider({children}){
     const ContaChurrasco = () =>{
         data["Cortes"].forEach(element =>{
             element.precototal = parseFloat((data.conta.quantidadekilos*element.preco).toFixed(2));
-            data.conta.gastototal+=element.precototal;
+            data.conta.gastototal+=parseFloat((element.precototal).toFixed(2));
         });
 
         data["Extras"].forEach(element =>{
             element.precototal = parseFloat((data.conta.quantidadeextra*element.preco).toFixed(2));
-            data.conta.gastototal+=element.precototal;
+            data.conta.gastototal+=parseFloat((element.precototal).toFixed(2));
         });
 
         data["Bebidas"].forEach(element =>{
             element.precototal = parseFloat((data.conta.quantidadelitro*element.preco).toFixed(2));
-            data.conta.gastototal+=element.precototal;
+            data.conta.gastototal+=parseFloat((element.precototal).toFixed(2));
 
             if (element.nome != "Cerveja"){
                 element.precototal += parseFloat((data.conta.quantidadelitroc*element.preco).toFixed(2));
-                data.conta.gastototal+=element.precototal;
+                data.conta.gastototal+=parseFloat((element.precototal).toFixed(2));
             }
-        })
+        
+            data.conta.rateiosemcrianca = parseFloat((data.conta.gastototal/data.pessoas.totalsemcrianca).toFixed(2));
+            data.conta.rateiocomcrianca = parseFloat((data.conta.gastototal/data.pessoas.total).toFixed(2));
+        });
+
+    }
+
+    const SetNome = (nome) =>{
+        data.info.nome = nome;
+    }
+
+    const SetNumero = (numero) =>{
+        data.info.nome = numero;
+    }
+
+    const SetCep = (cep) =>{
+        data.info.nome = cep;
     }
 
     const response = 
@@ -259,7 +286,10 @@ export default function AuthProvider({children}){
         DivideBebida,
         DivideCarne,
         SeparaExtra,
-        ContaChurrasco
+        ContaChurrasco,
+        SetCep,
+        SetNome,
+        SetNumero
     };
    
     return(
