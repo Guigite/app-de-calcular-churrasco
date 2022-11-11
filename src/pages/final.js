@@ -15,6 +15,8 @@ export default function Final(){
             <Text>{data.info.numero}</Text>
             
             <Lista2/>
+
+            <Text>Localização:</Text>
         
         </View>
     );
