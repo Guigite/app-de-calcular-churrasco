@@ -10,22 +10,26 @@ export default function Opcoes(props){
     MudaStatus(props.classe, props.posicao, checkboxState);
     
     return(
-        <View>
+      <View style={styles.fora}>
+        <View style={styles.container}>    
            <BouncyCheckbox
                 size={25}
                 fillColor="red"
                 unfillColor="#FFFFFF"
                 iconStyle={{ borderColor: "red" }}
                 innerIconStyle={{ borderWidth: 2 }}
-                textStyle={{ fontFamily: "Poppins, Sans-serif", display: 'flex', fontWeight: 'bold', }}
+                textStyle={{ fontFamily: "Poppins, Sans-serif", fontWeight: 'bold', }}
                 onPress={() => {
                     ModificaItem(props.classe, props.nome, checkboxState);
                     setCheckboxState(!checkboxState) 
                 }}
             />
-            <Text style={styles.text}>
-                {props.nome}
-            </Text>
+            <View styles={styles.container2}>
+              <Text style={styles.text}>
+                  {props.nome}
+              </Text>
+            </View>
+          </View>
         </View>
     );
 }
@@ -33,5 +37,21 @@ export default function Opcoes(props){
 const styles = StyleSheet.create({
     text:{
         color: "#fff",
-    }
+    },
+    container: {
+        flexDirection: 'row',
+        justifyContent: 'left',
+        alignItems: 'center',
+        width: 100,
+    },
+    container2:{
+      textAlign: 'center',
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    fora: {
+      justifyContent: 'center',
+      alignItems: 'center',
+      display: 'flex',
+    },
 })

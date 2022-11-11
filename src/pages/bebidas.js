@@ -11,26 +11,22 @@ export default function Bebidas(props){
     TotalLitrosCrianca();
     
     return(
-        <View>
+        <View style={styles.container}>
             <ImageBackground resizeMode="cover" style={styles.image}source={require("../imgs/churrascada.jpg")}>
-            <Text style={styles.litros}>Total de litros para Adultos: {data.pessoas.totallitrosa }L</Text>
-            <Text style={styles.litrosc}>Total de litros para Crianças: {data.pessoas.totallitrosc}L</Text>            
-                
-                <Secao classe="Bebidas" /> 
+              <Text style={styles.litros}>Total de litros para Adultos: {data.pessoas.totallitrosa }L</Text>
+              <Text style={styles.litrosc}>Total de litros para Crianças: {data.pessoas.totallitrosc}L</Text>            
+                  
+                  <Secao classe="Bebidas" /> 
 
-                {/* <Opcoes opcao1="addBebida" opcao2="tiraBebida" opcao3="addBebidas" opcao4="tiraBebidas" opcoes="Água"/>
-                <Opcoes opcao1="addBebida" opcao2="tiraBebida" opcao3="addBebidas" opcao4="tiraBebidas" opcoes="Suco"/>
-                <Opcoes opcao1="addBebida" opcao2="tiraBebida" opcao3="addBebidas" opcao4="tiraBebidas" opcoes="Refrigerante"/>
-                <Opcoes opcao1="addBebida" opcao2="tiraBebida" opcoes="Cerveja"/> */}
-            <TouchableOpacity style={styles.avancar}  
-                title="Avançar" 
-                onPress={() => {props.navigation.navigate('lista')
-                                DivideBebida();
-                                DivideCarne();
-                                SeparaExtra(); 
-                            }}>
-                <Text style={styles.textAvancar}>Avançar</Text>
-            </TouchableOpacity>
+              <TouchableOpacity style={styles.avancar}  
+                  title="Avançar" 
+                  onPress={() => {props.navigation.navigate('lista')
+                                  DivideBebida();
+                                  DivideCarne();
+                                  SeparaExtra(); 
+                              }}>
+                  <Text style={styles.textAvancar}>Avançar</Text>
+              </TouchableOpacity>
             </ImageBackground>
         </View>
     );
@@ -56,8 +52,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     image:{
-        flex: 1,
-        height: 700,
+        width: '100%',
+        height: '100%',
     },
     litros:{
         fontWeight:'bold',

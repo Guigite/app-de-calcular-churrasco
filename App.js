@@ -1,5 +1,4 @@
 import React from "react";
-import { Text, View, Pressable, StyleSheet } from "react-native";
 
 import AuthProvider from "./src/context/mainContext";
 
@@ -64,7 +63,7 @@ export default function App(props){
                     headerTitleAlign: 'center',
                     }} />
                     <Stack.Screen name="lista" component={Lista} 
-                    options={{title: 'Lista', 
+                    options={{title: 'Total', 
                     headerTintColor: 'white', 
                     headerStyle: {
                         backgroundColor: 'black',
@@ -77,4 +76,3 @@ export default function App(props){
         </NavigationContainer>
     );
 }
-

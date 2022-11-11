@@ -19,7 +19,7 @@ export default function AuthProvider({children}){
             qntCarne:0,
             qntBebida:0,
             qntBebidac:0,
-            qntExtra:0,
+            qntExtra:0
         },
         "Cortes": [
             {
@@ -192,36 +192,6 @@ export default function AuthProvider({children}){
             }
         }
     }
-
-    // const AddItem = (opcao) =>{
-    //     if(opcao == "addcarne"){
-    //         data.quantidade.qntCarne+=1;
-    //     }
-    //     else if(opcao == "tiracarne"){
-    //         data.quantidade.qntCarne-=1;
-    //     }
-    //     else if(opcao == "addextra"){
-    //         data.quantidade.qntExtra+=1;
-    //     }
-    //     else if(opcao == "tiraextra"){
-    //         data.quantidade.qntExtra-=1;
-    //     }
-    //     else if(opcao == "addBebida"){
-    //         data.quantidade.qntBebida+=1;
-    //     }
-    //     else if(opcao == "tiraBebida"){
-    //         data.quantidade.qntBebida-=1;
-    //     }
-    // }
-
-    // const AddBebidaCrianca = (opcao) => {
-    //     if(opcao == "addBebidas"){
-    //         data.quantidade.qntBebidac+=1;
-    //     }
-    //     else if(opcao == "tiraBebidas"){
-    //         data.quantidade.qntBebidac-=1;
-    //     }
-    // }
 
     const ZeraCarne = () =>{
         data.quantidade.qntCarne = 0;
