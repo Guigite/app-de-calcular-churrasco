@@ -9,14 +9,10 @@ export default function Opcoes(props){
 
     MudaStatus(props.classe, props.posicao, checkboxState);
     
-    return(
-<<<<<<< Updated upstream
-      <View style={styles.fora}>
-        <View style={styles.container}>    
-=======
+    return(   
       <View style={styles.container1}>
         <View style={styles.container2}>    
->>>>>>> Stashed changes
+
            <BouncyCheckbox
                 size={25}
                 fillColor="red"
@@ -29,11 +25,8 @@ export default function Opcoes(props){
                     setCheckboxState(!checkboxState) 
                 }}
             />
-<<<<<<< Updated upstream
-            <View styles={styles.container2}>
-=======
+
             <View styles={styles.container3}>
->>>>>>> Stashed changes
               <Text style={styles.text}>
                   {props.nome}
               </Text>
@@ -45,27 +38,6 @@ export default function Opcoes(props){
 
 const styles = StyleSheet.create({
     text:{
-<<<<<<< Updated upstream
-        color: "#fff",
-    },
-    container: {
-        flexDirection: 'row',
-        justifyContent: 'left',
-        alignItems: 'center',
-        width: 100,
-    },
-    container2:{
-      textAlign: 'center',
-      justifyContent: 'center',
-      alignItems: 'center',
-    },
-    fora: {
-      justifyContent: 'center',
-      alignItems: 'center',
-      display: 'flex',
-    },
-})
-=======
         color: "#fff"
     },
     container2: {
@@ -84,4 +56,3 @@ const styles = StyleSheet.create({
       display: 'flex'
     }
 });
->>>>>>> Stashed changes

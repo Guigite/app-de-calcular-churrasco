@@ -70,11 +70,9 @@ const styles = StyleSheet.create({
         fontWeight:'bold',
         color: '#fff',
         alignItems:'center',
-<<<<<<< Updated upstream
-        justifyContent: 'center'
-=======
+        justifyContent: 'center',
         justifyContent: 'center',
         textAlign: 'center',
->>>>>>> Stashed changes
+
     }
 })

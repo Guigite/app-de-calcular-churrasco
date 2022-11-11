@@ -24,10 +24,7 @@ export default function Bebidas(props){
                                   DivideBebida();
                                   DivideCarne();
                                   SeparaExtra(); 
-<<<<<<< Updated upstream
-=======
                                   ContaChurrasco();
->>>>>>> Stashed changes
                               }}>
                   <Text style={styles.textAvancar}>Avançar</Text>
               </TouchableOpacity>
