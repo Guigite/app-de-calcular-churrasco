@@ -73,7 +73,7 @@ export default function App(props){
                         },
                     headerTitleAlign: 'center',
                     }} />
-                    {/* <Stack.Screen name="info" component={Info} 
+                    <Stack.Screen name="info" component={Info} 
                     options={{title: 'Informações', 
                     headerTintColor: 'white', 
                     headerStyle: {
@@ -90,7 +90,7 @@ export default function App(props){
                         height: 100, 
                         },
                     headerTitleAlign: 'center',
-                    }} /> */}
+                    }} />
                 </Stack.Navigator>
             </AuthProvider>
         </NavigationContainer>

@@ -17,7 +17,7 @@ export default function Lista(props){
             <Text>Total de: R${data.conta.rateiocomcrianca} por pessoa</Text>
         
             <View>
-                <TouchableOpacity title="Avançar" onPress={() => props.navigation.navigate('home')}>
+                <TouchableOpacity title="Avançar" onPress={() => props.navigation.navigate('info')}>
                     <Text>Avançar</Text>
                 </TouchableOpacity>
             </View>

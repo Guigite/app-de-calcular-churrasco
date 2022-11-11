@@ -263,11 +263,11 @@ export default function AuthProvider({children}){
     }
 
     const SetNumero = (numero) =>{
-        data.info.nome = numero;
+        data.info.numero = numero;
     }
 
     const SetCep = (cep) =>{
-        data.info.nome = cep;
+        data.info.cep = cep;
     }
 
     const response = 

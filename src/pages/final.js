@@ -1,22 +1,22 @@
-// import React, { useContext } from "react";
-// import { View, Text, TouchableOpacity } from "react-native";
-// import { MainContext } from "../context/mainContext";
-// import Lista2 from "../components/listafinalo";
+import React, { useContext } from "react";
+import { View, Text, TouchableOpacity } from "react-native";
+import { MainContext } from "../context/mainContext";
+import Lista2 from "../components/listafinalo";
 
-// export default function Final(){
-//     const {data} = useContext(MainContext);
+export default function Final(){
+    const {data} = useContext(MainContext);
     
-//     return(
-//         <View>
+    return(
+        <View>
         
-//             <Text>Nome do Organizados</Text>
-//             <Text>{data.info.nome}</Text>
-//             <Text>Numero do Organizados</Text>
-//             <Text>{data.info.numero}</Text>
+            <Text>Nome do Organizados</Text>
+            <Text>{data.info.nome}</Text>
+            <Text>Numero do Organizados</Text>
+            <Text>{data.info.numero}</Text>
             
-//             <Lista2/>
+            <Lista2/>
         
-//         </View>
-//     );
-// }
+        </View>
+    );
+}
 
