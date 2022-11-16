@@ -37,41 +37,41 @@ export default function Carnes(props){
 }
 
 const styles = StyleSheet.create({
-	botoes: {
-		flexDirection: "row",
-		display: "flex",
-		alignItems: "center",
-		justifyContent: "center",
-		marginBottom: 35,
-	},
-	textAvancar: {
-		backgroundColor: "#62462B",
-		borderRadius: 10,
-		borderWidth: 3,
-		padding: 8,
-		marginTop: 30,
-		display: "flex",
-		alignItems: "center",
-		justifyContent: "center",
-		color: "#eecc60",
-		fontWeight: "bold",
-		fontSize: 25,
-		width: 120,
-		textAlign: "center",
-		marginBottom: 330,
-	},
-	avancar: {
-		marginRight: 20,
-	},
-	image: {
-		width: "100%",
-		height: "100%",
-	},
-	kg: {
-		fontWeight: "bold",
-		color: "#fff",
-		alignItems: "center",
-		justifyContent: "center",
-		textAlign: "center",
-	},
-});
+    botoes: {
+        flexDirection: 'row',
+        display: 'flex',
+        alignItems: "center",
+        justifyContent: "center",
+        marginBottom: 35
+    },
+    textAvancar:{
+        backgroundColor: '#62462B',
+        borderRadius: 10,
+        borderWidth: 3,
+        padding: 8,
+        marginTop: 30,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        color: '#eecc60',
+        fontWeight: 'bold',
+        fontSize: 25,
+        width: 120,
+        textAlign: 'center',
+        marginBottom: 330,
+    },
+    avancar: {
+        marginRight: 20
+    },
+    image:{
+        width: '100%',
+        height: '100%'
+    },
+    kg:{
+        fontWeight:'bold',
+        color: '#fff',
+        alignItems:'center',
+        justifyContent: 'center',
+        textAlign: 'center',
+    }
+})
