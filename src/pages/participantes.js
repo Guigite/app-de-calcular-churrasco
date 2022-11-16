@@ -85,9 +85,11 @@ const styles = StyleSheet.create({
         color: '#eecc60',
         fontWeight: 'bold',
         fontSize: 25,
+        borderWidth: 3,
+        textAlign: 'center',
     },
     image:{
         width: '100%',
         height: '100%',
     },
-});
+})

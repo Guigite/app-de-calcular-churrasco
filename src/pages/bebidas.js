@@ -37,6 +37,7 @@ const styles = StyleSheet.create({
     textAvancar:{
         backgroundColor: '#62462B',
         borderRadius: 10,
+        borderWidth: 3,
         padding: 8,
         marginTop: 30,
         display: 'flex',

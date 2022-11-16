@@ -15,10 +15,10 @@ export default function Opcoes(props){
 
            <BouncyCheckbox
                 size={25}
-                fillColor="red"
+                fillColor="#62462B"
                 unfillColor="#FFFFFF"
                 iconStyle={{ borderColor: "red" }}
-                innerIconStyle={{ borderWidth: 2 }}
+                innerIconStyle={{ borderWidth: 3 }}
                 textStyle={{ fontFamily: "Poppins, Sans-serif", fontWeight: 'bold', }}
                 onPress={() => {
                     ModificaItem(props.classe, props.nome, checkboxState);
@@ -38,7 +38,8 @@ export default function Opcoes(props){
 
 const styles = StyleSheet.create({
     text:{
-        color: "#fff"
+        color: "#fff",
+        fontWeight: "bold",
     },
     container2: {
         flexDirection: 'row',

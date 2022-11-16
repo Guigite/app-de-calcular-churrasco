@@ -6,7 +6,7 @@ import Secao from "../components/secao";
 
 export default function Carnes(props){
     const {data, TotalCarnes, ZeraBebida} = useContext(MainContext);
-    
+
     TotalCarnes();
 
     return(
@@ -47,6 +47,7 @@ const styles = StyleSheet.create({
     textAvancar:{
         backgroundColor: '#62462B',
         borderRadius: 10,
+        borderWidth: 3,
         padding: 8,
         marginTop: 30,
         display: 'flex',
@@ -71,8 +72,6 @@ const styles = StyleSheet.create({
         color: '#fff',
         alignItems:'center',
         justifyContent: 'center',
-        justifyContent: 'center',
         textAlign: 'center',
-
     }
 })

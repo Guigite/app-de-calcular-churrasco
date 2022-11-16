@@ -1,12 +1,11 @@
 import React, {useContext, useState} from "react";
-import BouncyCheckbox from "react-native-bouncy-checkbox";
-import { View, Text, TouchableOpacity, StyleSheet, FlatList} from "react-native";
+import { View, Text, StyleSheet, FlatList} from "react-native";
 import { MainContext } from "../context/mainContext";
 import Opcoes from "./checkbox";
 
 export default function Secao(props){
     const {data,AddItem,AddBebidaCrianca, MudaStatus} = useContext(MainContext);
-  
+
     return(
         <View>
            <Text style={styles.text}>{props.classe}</Text>

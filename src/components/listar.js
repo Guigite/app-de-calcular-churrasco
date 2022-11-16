@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { View, Text, FlatList } from "react-native";
+import { View, Text, FlatList, StyleSheet } from "react-native";
 import { MainContext } from "../context/mainContext";
 
 export default function Listar(props){
@@ -12,11 +12,24 @@ export default function Listar(props){
                 renderItem={({item}) => {
                     if(item.status == true){
                         return (<View>
-                                    <Text>{item.nome}</Text>
-                                    <Text>R${item.precototal}</Text>
+                                    <Text style={styles.text}>{item.nome}</Text>
+                                    <Text style={styles.text}>R${item.precototal}</Text>
                                 </View>)
                     }
                 }}
             />
     );
 }
+
+const styles = StyleSheet.create({
+    text: {
+        fontWeight: 'bold',
+        fontSize: 20,
+        color: '#fff',
+        display: 'flex',
+        alignCenter: 'center',
+        justifyContent: 'center',
+        textAlign: 'center',
+        marginTop: 8,
+    },
+})
