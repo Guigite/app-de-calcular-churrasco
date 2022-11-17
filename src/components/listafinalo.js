@@ -9,11 +9,8 @@ export default function Lista2(){
     return(
         <View>
 
-            <Listar classe="Cortes"/> 
-            <Listar classe="Extras"/> 
-            <Listar classe="Bebidas"/> 
             <Text style={styles.text}>Total: R${parseFloat((data.conta.gastototal).toFixed(2))}</Text>
-            <Text style={styles.text}>Total de: R${data.conta.rateiosemcrianca} por pessoa s/ crianças</Text>
+            <Text style={styles.text}>Total de: R${data.conta.rateiosemcrianca} por adulto</Text>
             <Text style={styles.text}>Total de: R${data.conta.rateiocomcrianca} por pessoa</Text>
         
         </View>   

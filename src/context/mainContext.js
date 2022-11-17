@@ -147,6 +147,16 @@ export default function AuthProvider({children}){
             numero: "",
             nome: "",
             cep: ""
+        },
+        descartaveis: {
+            precocarvao: 0,
+            qtdcarvao:0,
+            precopratos: 0,
+            qtdpratos: 0,
+            precocopos: 0,
+            qtdcopos: 0,
+            precofosforo: 1.75,
+            precosal: 7.50
         }
     }
 
@@ -258,6 +268,29 @@ export default function AuthProvider({children}){
 
     }
 
+    const ValorCarvao = () =>{
+        if(data.pessoas.totalkilos > 0){
+            data.descartaveis.qtdcarvao=1;
+        }else if(data.pessoas.totalkilos > 15){
+            data.descartaveis.qtdcarvao=2;
+        }else if(data.pessoas.totalkilos > 25){
+            data.descartaveis.qtdcarvao=3;
+        }
+
+        data.descartaveis.precocarvao=data.descartaveis.qtdcarvao*65;
+    }
+
+    const ValorDescartaveis = () =>{
+        data.descartaveis.qtdcopos= data.pessoas.total*4;
+        data.descartaveis.qtdpratos= data.pessoas.total*2;
+
+        data.descartaveis.precocopos = data.descartaveis.qtdcopos*0.085;
+        data.descartaveis.precopratos = data.descartaveis.qtdpratos*0.8;
+
+        data.conta.gastototal+=data.descartaveis.precocarvao+data.descartaveis.precocopos+data.descartaveis.precopratos+data.descartaveis.precofosforo+data.descartaveis.precosal;
+    }
+
+
     const SetNome = (nome) =>{
         data.info.nome = nome;
     }
@@ -289,7 +322,9 @@ export default function AuthProvider({children}){
         ContaChurrasco,
         SetCep,
         SetNome,
-        SetNumero
+        SetNumero,
+        ValorDescartaveis,
+        ValorCarvao
     };
    
     return(

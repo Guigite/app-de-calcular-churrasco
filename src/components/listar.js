@@ -11,9 +11,9 @@ export default function Listar(props){
                 data={data[props.classe]}
                 renderItem={({item}) => {
                     if(item.status == true){
-                        return (<View>
-                                    <Text style={styles.text}>{item.nome}</Text>
-                                    <Text style={styles.text}>R${item.precototal}</Text>
+                        return (<View style={styles.container}>
+                                    <Text style={styles.text}>{item.nome}: </Text>
+                                    <Text style={styles.text}> R${item.precototal}</Text>
                                 </View>)
                     }
                 }}
@@ -32,4 +32,10 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         marginTop: 8,
     },
+    container:{
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center'
+    }
 })

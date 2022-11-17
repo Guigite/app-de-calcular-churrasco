@@ -1,6 +1,7 @@
-import React, { useContext } from "react";
+import React, {useContext} from "react";
 import { View, Text, TouchableOpacity, ImageBackground, StyleSheet } from "react-native";
 import Listar from "../components/listar";
+import Sugestoes from "../components/sugestoes";
 import { MainContext } from "../context/mainContext";
 
 export default function Lista(props){
@@ -14,9 +15,20 @@ export default function Lista(props){
             <Listar classe="Extras"/> 
             <Listar classe="Bebidas"/> 
             
+            <Sugestoes/>
+
+            <View style={styles.descartaveis}>
+                <Text style={styles.text}>Descartaveis</Text>
+                <Text style={styles.text}>Copos: R$ {(data.descartaveis.precocopos).toFixed(2)} - qtd: {data.descartaveis.qtdcopos}</Text>
+                <Text style={styles.text}>Pratos: R$ {(data.descartaveis.precopratos).toFixed(2)} - qtd: {data.descartaveis.qtdpratos}</Text>
+                <Text style={styles.text}>Carvao: R$ {data.descartaveis.precocarvao} - qtd: {data.descartaveis.qtdcarvao}</Text>
+                <Text style={styles.text}>Sal Grosso: R$ 7,50 - 1kg</Text>
+                <Text style={styles.text}>Fósforo: R$ 1,75 - caixinha</Text>
+            </View>
+            
             <View style={styles.totais}>
               <Text style={styles.text}>Total: R${parseFloat((data.conta.gastototal).toFixed(2))}</Text>
-              <Text style={styles.text}>Total de: R${data.conta.rateiosemcrianca} por pessoa s/ crianças</Text>
+              <Text style={styles.text}>Total de: R${data.conta.rateiosemcrianca} por adulto</Text>
               <Text style={styles.text}>Total de: R${data.conta.rateiocomcrianca} por pessoa</Text>
             </View>
 
@@ -47,6 +59,10 @@ const styles = StyleSheet.create({
     },
     totais: {
       marginTop: 10,
+      backgroundColor: 'black',
+      borderRadius: 10,
+      padding: 5,
+      margin: 5,
     },
     textAvancar:{
         backgroundColor: '#62462B',
@@ -68,4 +84,11 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         marginBottom: 5,
     },
+    descartaveis: {
+      marginTop: 10,
+      padding: 5,
+      margin: 25,
+      backgroundColor: 'black',
+      borderRadius: 10,
+    }
 });

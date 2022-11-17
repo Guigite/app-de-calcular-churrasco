@@ -5,7 +5,7 @@ import Secao from "../components/secao";
 
 
 export default function Bebidas(props){
-    const {data, TotalLitrosAdultos, TotalLitrosCrianca, DivideCarne, DivideBebida, SeparaExtra, ContaChurrasco } = useContext(MainContext);
+    const {data, TotalLitrosAdultos, TotalLitrosCrianca, DivideCarne, DivideBebida, SeparaExtra, ContaChurrasco, ValorDescartaveis, ValorCarvao } = useContext(MainContext);
 
     TotalLitrosAdultos();
     TotalLitrosCrianca();
@@ -25,6 +25,8 @@ export default function Bebidas(props){
                                   DivideCarne();
                                   SeparaExtra(); 
                                   ContaChurrasco();
+                                  ValorCarvao();
+                                  ValorDescartaveis();
                               }}>
                   <Text style={styles.textAvancar}>Avançar</Text>
               </TouchableOpacity>
