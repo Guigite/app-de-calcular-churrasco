@@ -1,5 +1,5 @@
 import React, {useContext} from "react";
-import { View, Text, TouchableOpacity, ImageBackground, StyleSheet } from "react-native";
+import { View, Text, TouchableOpacity, ImageBackground, StyleSheet, ScrollView } from "react-native";
 import Listar from "../components/listar";
 import Sugestoes from "../components/sugestoes";
 import { MainContext } from "../context/mainContext";
@@ -8,7 +8,7 @@ export default function Lista(props){
     const {data} = useContext(MainContext);
 
     return(
-        <View>
+        <ScrollView>
           <ImageBackground resizeMode="cover" style={styles.image} source={require("../imgs/churrascada.jpg")}>
 
             <Listar classe="Cortes"/> 
@@ -22,8 +22,8 @@ export default function Lista(props){
                 <Text style={styles.text}>Copos: R$ {(data.descartaveis.precocopos).toFixed(2)} - qtd: {data.descartaveis.qtdcopos}</Text>
                 <Text style={styles.text}>Pratos: R$ {(data.descartaveis.precopratos).toFixed(2)} - qtd: {data.descartaveis.qtdpratos}</Text>
                 <Text style={styles.text}>Carvao: R$ {data.descartaveis.precocarvao} - qtd: {data.descartaveis.qtdcarvao}</Text>
-                <Text style={styles.text}>Sal Grosso: R$ 7,50 - 1kg</Text>
-                <Text style={styles.text}>Fósforo: R$ 1,75 - caixinha</Text>
+                <Text style={styles.text}>Sal Grosso: R$ 7.50 - 1kg</Text>
+                <Text style={styles.text}>Fósforo: R$ 1.75 - caixinha</Text>
             </View>
             
             <View style={styles.totais}>
@@ -38,7 +38,7 @@ export default function Lista(props){
                 </TouchableOpacity>
             </View>
           </ImageBackground>
-        </View>   
+        </ScrollView>   
     );
 }
 
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
 
     image:{
         width: '100%',
-        height: '100%',
+        height: 1000,
     },
     text: {
         fontWeight: 'bold',
