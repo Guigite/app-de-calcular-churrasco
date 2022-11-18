@@ -7,10 +7,10 @@ export default function Final(){
     const {data} = useContext(MainContext);
     
     return(
-      <ScrollView>
         <View>
           <ImageBackground resizeMode="cover" style={styles.image}source={require("../imgs/churrascada.jpg")}>
 
+          <View style={styles.container}>
             <Text style={styles.text}>Nome do Organizador:</Text>
             <Text style={styles.text}>{data.info.nome}</Text>
             <Text style={styles.text}>Numero do Organizador:</Text>
@@ -18,14 +18,20 @@ export default function Final(){
             
             <Lista2/>
 
-            <Text style={styles.text}>Localização:</Text>
+            <Text style={styles.text}>Localização(cep): <Text>{data.info.cep}</Text></Text>
+          </View>
           </ImageBackground>        
         </View>
-        </ScrollView>
     );
 }
 
 const styles = StyleSheet.create({
+    container:{
+        backgroundColor: 'black',
+        margin: 20,
+        marginTop: 100,
+        borderRadius: 15
+    },
     image:{
         width: '100%',
         height: '100%',
